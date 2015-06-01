@@ -20,12 +20,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TABLE_CREATE = "create table contacts (id integer primary key not null , " +
             "name text not null , email text not null , uname text not null , pass text not null);";
 
-    public DatabaseHelper(Context context) {
+    public DatabaseHelper(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) {
+    public void onCreate(SQLiteDatabase db){
         db.execSQL(TABLE_CREATE);
         this.db = db;
     }
@@ -48,30 +48,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public String searchPass(String uname)
-    {
+    public String searchPass(String uname){
+
         db = this.getReadableDatabase();
         String query = "select uname, pass from "+TABLE_NAME;
         Cursor cursor = db.rawQuery(query , null);
         String a, b;
         b = "not found";
-        if(cursor.moveToFirst())
-        {
+        if(cursor.moveToFirst()){
             do{
                 a = cursor.getString(0);
 
-                if(a.equals(uname))
-                {
+                if(a.equals(uname)){
                     b = cursor.getString(1);
                     break;
                 }
             }
             while(cursor.moveToNext());
         }
-
         return b;
     }
-
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
