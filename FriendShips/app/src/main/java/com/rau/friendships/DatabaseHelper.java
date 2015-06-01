@@ -9,15 +9,15 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "contacts.db";
-    private static final String TABLE_NAME = "contacts";
+    private static final String DATABASE_NAME = "users.db";
+    private static final String TABLE_NAME = "users";
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_NAME = "name";
     private static final String COLUMN_EMAIL = "email";
     private static final String COLUMN_UNAME = "uname";
     private static final String COLUMN_PASS = "pass";
     SQLiteDatabase db;
-    private static final String TABLE_CREATE = "create table contacts (id integer primary key not null , " +
+    private static final String TABLE_CREATE = "create table users (id integer primary key not null , " +
             "name text not null , email text not null , uname text not null , pass text not null);";
 
     public DatabaseHelper(Context context) {
@@ -34,7 +34,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        String query = "select * from contacts";
+        String query = "select * from users";
         Cursor cursor = db.rawQuery(query , null);
         int count = cursor.getCount();
 
