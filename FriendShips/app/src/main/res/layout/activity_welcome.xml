@@ -23,4 +23,47 @@
         android:text="@string/emptyString"
         android:id="@+id/TVusername" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.18">
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="LogOut"
+            android:id="@+id/logoutbutton"
+            android:layout_gravity="right"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="79dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create Delivery"
+            android:id="@+id/createdelivery"
+            android:layout_above="@+id/logoutbutton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="55dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Deliveries"
+            android:id="@+id/viewbutton"
+            android:layout_marginBottom="67dp"
+            android:layout_above="@+id/createdelivery"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Friend"
+            android:id="@+id/addfriend"
+            android:layout_marginBottom="61dp"
+            android:layout_above="@+id/viewbutton"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
 </LinearLayout>
