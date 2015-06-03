@@ -2,15 +2,23 @@ package com.rau.friendships;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 public class Register extends Activity {
 
     DatabaseHelper helper = new DatabaseHelper(this);
-    @Override
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
@@ -49,10 +57,47 @@ public class Register extends Activity {
                 c.setPass(pass1str);
                 helper.insertContact(c);
 
+                new FetchSQL().execute();
+
                 // direct to welcome screen
                 Intent i = new Intent(Register.this, Welcome.class);
                 startActivity(i);
             }
         }
+    }
+    private class FetchSQL extends AsyncTask<Void,Void,String> {
+        @Override
+        protected String doInBackground(Void... params) {
+            String retval = "";
+            try {
+                Class.forName("org.postgresql.Driver");
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+                retval = e.toString();
+            }
+            String url = "jdbc:postgresql://panguin.chickenkiller.com:34567/postgres?user=postgres&password=helloworld!";
+            Connection conn;
+            try {
+                DriverManager.setLoginTimeout(5);
+                conn = DriverManager.getConnection(url);
+                Statement st = conn.createStatement();
+                String sql;
+                sql = "INSERT INTO user_info (uid, name, password, email) VALUES (1234,'test','test','test');";
+                ResultSet rs = st.executeQuery(sql);
+                while(rs.next()) {
+                    retval = rs.getString("name");
+                    //int temp =
+                    //retval = rs.getInt("dataVal");
+                }
+                rs.close();
+                st.close();
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+                retval = e.toString();
+            }
+            return retval;
+        }
+
     }
 }
