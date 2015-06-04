@@ -89,7 +89,7 @@ public class Register extends Activity {
                 Statement st = conn.createStatement();
                 String sql;
                 sql = "INSERT INTO user_info (name, password, email) VALUES ('"+ tname.getText() +  "','" + tpass1.getText() + "','" + temail.getText() + "');";
-                 st.executeQuery(sql);
+                st.executeQuery(sql);
                 st.close();
                 conn.close();
             } catch (SQLException e) {
