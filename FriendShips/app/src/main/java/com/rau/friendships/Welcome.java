@@ -43,13 +43,6 @@ public class Welcome extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    // if the user cancels, go back to main activity
-    public void onLogoutClick(View v){
-        Intent i = new Intent(Welcome.this, MainActivity.class);
-        startActivity(i);
-        finish();
-    }
-
     // button actions
     public void onButtonClick(View v){
         // create delivery
@@ -66,6 +59,9 @@ public class Welcome extends ActionBarActivity {
 
         // logout
         else if (v.getId() == R.id.BTlogout){
+            Intent i = new Intent(Welcome.this, MainActivity.class);
+            startActivity(i);
+            finish();
 
         }
 
