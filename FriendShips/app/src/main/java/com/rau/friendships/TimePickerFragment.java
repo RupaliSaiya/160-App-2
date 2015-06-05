@@ -22,8 +22,6 @@ public class TimePickerFragment extends DialogFragment
         super.onAttach(activity);
         mActivity = activity;
 
-        // This error will remind you to implement an OnTimeSetListener
-        //   in your Activity if you forget
         try {
             mListener = (TimePickerDialog.OnTimeSetListener) activity;
         } catch (ClassCastException e) {
