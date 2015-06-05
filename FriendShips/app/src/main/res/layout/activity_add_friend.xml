@@ -8,6 +8,40 @@
 
     <TextView android:text="Add Friends" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView1111" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/textView1111"
+        android:layout_gravity="center_horizontal" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/mutual_friends"
+        android:hint="Friend's Email"
+        android:layout_below="@+id/textView1111"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/BTaddfriend"
+        android:onClick="onAddFriendClick"
+        android:layout_above="@+id/BTcancel_add"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:id="@+id/BTcancel_add"
+        android:onClick="onCancelAddClick"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="38dp" />
+
 
 </RelativeLayout>

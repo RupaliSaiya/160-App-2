@@ -28,6 +28,14 @@ public class Welcome extends ActionBarActivity {
         return true;
     }
 
+    public void onSignUpClick(View v)
+    {
+
+
+    }
+
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

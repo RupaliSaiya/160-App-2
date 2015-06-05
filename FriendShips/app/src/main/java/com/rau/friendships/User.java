@@ -1,6 +1,8 @@
 package com.rau.friendships;
 
-public class User {
+import android.app.Application;
+
+public class User extends Application {
     String name ,email,uname,pass;
 
     public void setName(String name){
