@@ -40,17 +40,18 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Create Delivery"
-            android:id="@+id/createdelivery"
-            android:layout_above="@+id/logoutbutton"
+            android:id="@+id/BTcreatedelivery"
+            android:layout_above="@+id/BTlogout"
             android:layout_centerHorizontal="true"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="onButtonClick" />
 
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Add Friend"
-            android:id="@+id/addfriend"
-            android:layout_above="@+id/viewbutton"
+            android:id="@+id/BTaddfriend"
+            android:layout_above="@+id/BTviewDeliveries"
             android:layout_centerHorizontal="true"
             android:layout_weight="1" />
     </LinearLayout>
@@ -64,7 +65,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="LogOut"
-            android:id="@+id/logoutbutton"
+            android:id="@+id/BTlogout"
             android:layout_gravity="right"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
@@ -74,8 +75,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="View Deliveries"
-            android:id="@+id/viewbutton"
-            android:layout_above="@+id/createdelivery"
+            android:id="@+id/BTviewDeliveries"
+            android:layout_above="@+id/BTcreatedelivery"
             android:layout_centerHorizontal="true"
             android:layout_weight="1" />
     </LinearLayout>

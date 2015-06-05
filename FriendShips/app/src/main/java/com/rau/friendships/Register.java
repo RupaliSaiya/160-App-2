@@ -61,6 +61,7 @@ public class Register extends Activity {
 
                 // direct to welcome screen
                 Intent i = new Intent(Register.this, Welcome.class);
+                i.putExtra("Username", unamestr);
                 startActivity(i);
             }
         }

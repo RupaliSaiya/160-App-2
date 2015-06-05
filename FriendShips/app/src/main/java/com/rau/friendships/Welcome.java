@@ -1,10 +1,13 @@
 package com.rau.friendships;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class Welcome extends ActionBarActivity {
@@ -38,5 +41,38 @@ public class Welcome extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    // button actions
+    public void onButtonClick(View v){
+        // create delivery
+        if (v.getId() == R.id.BTcreatedelivery){
+            Intent i = new Intent(Welcome.this, CreateDelivery.class);
+            startActivity(i);
+
+        }
+
+        // add friend
+        else if (v.getId() == R.id.BTaddfriend){
+
+        }
+
+        // logout
+        else if (v.getId() == R.id.BTlogout){
+
+        }
+
+        // view deliveries
+        else if (v.getId() == R.id.BTviewDeliveries){
+
+        }
+
+        // something went wrong
+        else{
+            String error = "Not a valid selection.";
+            Toast output = Toast.makeText(Welcome.this, error, Toast.LENGTH_SHORT);
+            output.show();
+        }
+
     }
 }

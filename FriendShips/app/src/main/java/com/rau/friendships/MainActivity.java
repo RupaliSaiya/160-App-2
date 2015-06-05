@@ -44,11 +44,12 @@ public class MainActivity extends ActionBarActivity {
             }
             else {
                 String error = "Username and Password do NOT match.";
-                Toast temp = Toast.makeText(MainActivity.this, error, Toast.LENGTH_SHORT);
-                temp.show();
+                Toast output = Toast.makeText(MainActivity.this, error, Toast.LENGTH_SHORT);
+                output.show();
             }
         } // end if
 
+        // send to Registration screen
         if(v.getId() == R.id.Bsignup) {
             Intent i = new Intent(MainActivity.this, Register.class);
             startActivity(i);

@@ -6,4 +6,7 @@
     <string name="title_activity_register">Register</string>
     <string name="title_activity_welcome">Welcome</string>
     <string name="emptyString"></string>
+    <string name="title_activity_create_delivery">CreateDelivery</string>
+    <string name="pick_time">Time</string>
+    <string name="pick_date">Date</string>
 </resources>

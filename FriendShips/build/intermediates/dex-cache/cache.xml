@@ -2,39 +2,32 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Arthur Pang\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="C:\Users\Arthur Pang\Desktop\160-App-2\FriendShips\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-2a96dc7d4bd3dbdc2beb7556b8e4d02a8408f01e.jar" />
-    </item>
-    <item
-        jar="C:\Users\Arthur Pang\Desktop\160-App-2\FriendShips\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\jars\classes.jar"
+        jar="D:\App\FriendShips\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="C:\Users\Arthur Pang\Desktop\160-App-2\FriendShips\app\build\intermediates\pre-dexed\debug\classes-ebe20d7e3e0c76fcb1edcf61ff2430e7d5b0c43c.jar" />
+        <dex dex="D:\App\FriendShips\app\build\intermediates\pre-dexed\debug\classes-aea3684bc9accd61c477b01c6e99c7d10ff2849d.jar" />
     </item>
     <item
-        jar="C:\Users\Arthur Pang\Desktop\160-App-2\FriendShips\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\classes.jar"
+        jar="C:\Users\Uriah\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="C:\Users\Arthur Pang\Desktop\160-App-2\FriendShips\app\build\intermediates\pre-dexed\debug\classes-0f3255d4b85c383b822ccf76d4f853049d85c520.jar" />
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="D:\App\FriendShips\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-4fe54fc75c60bde06db7885a956eb0c29100bd13.jar" />
     </item>
     <item
-        jar="C:\Users\Arthur Pang\Desktop\160-App-2\FriendShips\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\libs\internal_impl-21.0.3.jar"
+        jar="D:\App\FriendShips\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\libs\internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="C:\Users\Arthur Pang\Desktop\160-App-2\FriendShips\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-349e143a2c183b71d8bd1b434c63d5e8e47048d3.jar" />
+        <dex dex="D:\App\FriendShips\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-e62e150facc62651f87b3e49e71a3999cce11e30.jar" />
     </item>
     <item
-        jar="C:\Users\Arthur Pang\Desktop\160-App-2\FriendShips\app\libs\postgresql-9.4-1201.jdbc4.jar"
+        jar="D:\App\FriendShips\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="b46544ef0eaf0405504089dcc71f36e3f190ef09">
-        <dex dex="C:\Users\Arthur Pang\Desktop\160-App-2\FriendShips\app\build\intermediates\pre-dexed\debug\postgresql-9.4-1201.jdbc4-e65fac4de2ccdc66386c663ae90e0c6c0b3d0204.jar" />
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="D:\App\FriendShips\app\build\intermediates\pre-dexed\debug\classes-0668643d8185e33263c98928528566ba7b1b681d.jar" />
     </item>
 
 </items>
