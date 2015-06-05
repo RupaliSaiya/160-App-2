@@ -67,4 +67,11 @@
         android:id="@+id/Bsignupbutton"
         android:onClick="onSignUpClick" />
 
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:id="@+id/BTcancel"
+        android:onClick="onCancelClick" />
+
 </LinearLayout>

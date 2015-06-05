@@ -24,6 +24,13 @@ public class Register extends Activity {
         setContentView(R.layout.activity_register);
     }
 
+    // if the user cancels, go back to main activity
+    public void onCancelClick(View v){
+        Intent i = new Intent(Register.this, MainActivity.class);
+        startActivity(i);
+    }
+
+    // if the user submits their registration
     public void onSignUpClick(View v)
     {
         if(v.getId()== R.id.Bsignupbutton)
