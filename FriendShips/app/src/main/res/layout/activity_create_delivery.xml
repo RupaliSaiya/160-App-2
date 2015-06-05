@@ -15,7 +15,7 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="20px"
-        android:layout_weight="0.55" />
+        android:layout_weight="0.36" />
 
     <EditText
         android:layout_width="match_parent"
@@ -54,17 +54,49 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:text="@string/pick_date"
+            android:onClick="showDatePickerDialog"
+            android:layout_weight="1"
+            android:id="@+id/BTdate" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:text="@string/pick_time"
             android:onClick="showTimePickerDialog"
             android:id="@+id/BTtime"
             android:layout_weight="1" />
 
-        <Button
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+
+        <TextView
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/pick_date"
-            android:onClick="showDatePickerDialog"
-            android:layout_weight="1" />
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/TVdate"
+            android:singleLine="true"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:inputType="date"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/TVtime"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:inputType="time"
+            android:layout_gravity="center" />
+
     </LinearLayout>
 
     <CheckBox

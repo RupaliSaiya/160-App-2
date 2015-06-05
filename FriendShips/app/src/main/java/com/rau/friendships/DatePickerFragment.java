@@ -1,11 +1,11 @@
 package com.rau.friendships;
 
+
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.os.Bundle;
 import android.widget.DatePicker;
-
 import java.util.Calendar;
 
 public class DatePickerFragment extends DialogFragment
@@ -25,5 +25,6 @@ public class DatePickerFragment extends DialogFragment
 
     public void onDateSet(DatePicker view, int year, int month, int day) {
         // Do something with the date chosen by the user
+
     }
 }
