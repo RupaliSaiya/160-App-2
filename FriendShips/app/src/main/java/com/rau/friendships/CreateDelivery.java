@@ -29,8 +29,6 @@ public class CreateDelivery extends FragmentActivity
     private int pickerDay= 0;
     private int pickerYear = 0;
 
-    private Button timeButton, dateButton;
-    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,6 +105,31 @@ public class CreateDelivery extends FragmentActivity
         TextView dateTV = (TextView)findViewById(R.id.TVdate);
         dateTV.setText(date);
 
+    }
+
+    /**********************************
+     |   Create the delivery in db    |
+     **********************************/
+    public void onClickCreate(View v){
+        /**
+         * to do: code goes here
+         * to insert the delivery
+         * into the database
+         * use these variables for time/date
+
+         pickerHour
+         pickerMin
+         pickerMonth
+         pickerDay
+         pickerYear
+
+         Need to also capture from the Edit Text fields
+         Delivery title
+         Recipient
+         Location
+         Additional Info
+
+         */
     }
 
 }
