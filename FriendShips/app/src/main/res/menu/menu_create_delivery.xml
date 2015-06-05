@@ -1,7 +1,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.rau.friendships.AddFriend">
+    tools:context="com.rau.friendships.ViewDeliveries">
+
 
     <!-- Welcome-->
     <item android:id="@+id/menu_welcome"
@@ -9,15 +10,16 @@
         android:orderInCategory="1"
         app:showAsAction="never" />
 
-    <!-- Create Deliveries -->
-    <item android:id="@+id/menu_create_delivery"
-        android:title="@string/title_activity_create_delivery"
-        android:orderInCategory="2"
-        app:showAsAction="never" />
 
     <!-- View Deliveries-->
     <item android:id="@+id/menu_view_deliveries"
         android:title="@string/title_activity_view_deliveries"
+        android:orderInCategory="2"
+        app:showAsAction="never" />
+
+    <!-- Add Friend -->
+    <item android:id="@+id/menu_add_friend"
+        android:title="@string/title_activity_add_friend"
         android:orderInCategory="3"
         app:showAsAction="never" />
 

@@ -56,7 +56,7 @@ public class Register extends Activity {
             }
             else{
 
-                // insert into database
+                // insert into database (for local login only)
                 User c = new User();
                 c.setName(namestr);
                 c.setEmail(emailstr);
@@ -74,6 +74,9 @@ public class Register extends Activity {
         }
     }
     private class FetchSQL extends AsyncTask<Void,Void,String> {
+
+
+
         @Override
         protected String doInBackground(Void... params) {
             String retval = "";

@@ -1,5 +1,6 @@
 package com.rau.friendships;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -36,11 +37,43 @@ public class AddFriend extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.menu_welcome) {
+            goToWelcome();
+            return true;
+        }else if (id == R.id.menu_create_delivery) {
+            goToCreateDeliveries();
+            return true;
+        }else if(id == R.id.menu_view_deliveries){
+            goToViewDeliveries();
+            return true;
+        }else if(id == R.id.menu_logout){
+            logout();
             return true;
         }
-
         return super.onOptionsItemSelected(item);
+    }
+
+    /**********************************
+     |   methods for menu actions     |
+     **********************************/
+    private void goToWelcome(){
+        Intent intent = new Intent(this, Welcome.class);
+        startActivity(intent);
+    }
+
+    private void goToViewDeliveries(){
+        Intent intent = new Intent(this, ViewDeliveries.class);
+        startActivity(intent);
+    }
+
+    private void goToCreateDeliveries(){
+        Intent intent = new Intent(this, CreateDelivery.class);
+        startActivity(intent);
+    }
+
+    private void logout() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

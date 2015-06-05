@@ -1,10 +1,10 @@
 package com.rau.friendships;
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.DialogFragment;
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -17,7 +17,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 // this class needs to be abstract
-public class CreateDelivery extends FragmentActivity
+public class CreateDelivery extends ActionBarActivity
         implements TimePickerDialog.OnTimeSetListener,
         DatePickerDialog.OnDateSetListener
 {
@@ -51,13 +51,46 @@ public class CreateDelivery extends FragmentActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.menu_welcome) {
+            goToWelcome();
+            return true;
+        }else if (id == R.id.menu_view_deliveries) {
+            goToViewDeliveries();
+            return true;
+        }else if(id == R.id.menu_add_friend){
+            goToAddFriends();
+            return true;
+        }else if(id == R.id.menu_logout){
+            logout();
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
+
+    /**********************************
+     |   methods for menu actions     |
+     **********************************/
+    private void goToWelcome(){
+        Intent intent = new Intent(this, Welcome.class);
+        startActivity(intent);
+    }
+
+    private void goToViewDeliveries(){
+        Intent intent = new Intent(this, ViewDeliveries.class);
+        startActivity(intent);
+    }
+
+    private void goToAddFriends(){
+        Intent intent = new Intent(this, AddFriend.class);
+        startActivity(intent);
+    }
+
+    private void logout() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
 
     /**********************************
      |   Set and show Time selected   |

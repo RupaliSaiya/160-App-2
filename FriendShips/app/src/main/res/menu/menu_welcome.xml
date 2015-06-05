@@ -1,6 +1,31 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" tools:context="com.rau.friendships.Welcome">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.rau.friendships.Welcome">
+
+
+    <!-- Create Deliveries -->
+    <item android:id="@+id/menu_create_delivery"
+        android:title="@string/title_activity_create_delivery"
+        android:orderInCategory="1"
+        app:showAsAction="never" />
+
+    <!-- View Deliveries-->
+    <item android:id="@+id/menu_view_deliveries"
+        android:title="@string/title_activity_view_deliveries"
+        android:orderInCategory="2"
+        app:showAsAction="never" />
+
+    <!-- Add Friend -->
+    <item android:id="@+id/menu_add_friend"
+        android:title="@string/title_activity_add_friend"
+        android:orderInCategory="3"
+        app:showAsAction="never" />
+
+    <!-- Logout -->
+    <item android:id="@+id/menu_logout"
+        android:title="@string/log_out"
+        android:orderInCategory="4"
+        app:showAsAction="never" />
+
 </menu>

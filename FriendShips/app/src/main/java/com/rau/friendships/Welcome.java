@@ -28,13 +28,6 @@ public class Welcome extends ActionBarActivity {
         return true;
     }
 
-    public void onSignUpClick(View v)
-    {
-
-
-    }
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -43,15 +36,49 @@ public class Welcome extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.menu_add_friend) {
+            goToAddFriend();
+            return true;
+        }else if (id == R.id.menu_create_delivery) {
+            goToCreateDeliveries();
+            return true;
+        }else if(id == R.id.menu_view_deliveries){
+            goToViewDeliveries();
+            return true;
+        }else if(id == R.id.menu_logout){
+            logout();
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
-    // button actions
+    /**********************************
+     |   methods for menu actions     |
+     **********************************/
+    private void goToAddFriend(){
+        Intent intent = new Intent(this, AddFriend.class);
+        startActivity(intent);
+    }
+
+    private void goToViewDeliveries(){
+        Intent intent = new Intent(this, ViewDeliveries.class);
+        startActivity(intent);
+    }
+
+    private void goToCreateDeliveries(){
+        Intent intent = new Intent(this, CreateDelivery.class);
+        startActivity(intent);
+    }
+
+    private void logout() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    /**********************************
+     |      button click actions      |
+     **********************************/
     public void onButtonClick(View v){
         // create delivery
         if (v.getId() == R.id.BTcreatedelivery){
