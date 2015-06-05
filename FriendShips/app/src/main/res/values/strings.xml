@@ -9,4 +9,6 @@
     <string name="title_activity_create_delivery">CreateDelivery</string>
     <string name="pick_time">Time</string>
     <string name="pick_date">Date</string>
+    <string name="title_activity_add_friend">AddFriend</string>
+    <string name="title_activity_view_deliveries">ViewDeliveries</string>
 </resources>

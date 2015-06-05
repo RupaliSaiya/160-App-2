@@ -30,6 +30,14 @@
             android:name=".CreateDelivery"
             android:label="@string/title_activity_create_delivery" >
         </activity>
+        <activity
+            android:name=".AddFriend"
+            android:label="@string/title_activity_add_friend" >
+        </activity>
+        <activity
+            android:name=".ViewDeliveries"
+            android:label="@string/title_activity_view_deliveries" >
+        </activity>
     </application>
 
 </manifest>

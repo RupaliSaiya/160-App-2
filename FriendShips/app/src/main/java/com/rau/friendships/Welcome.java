@@ -54,7 +54,8 @@ public class Welcome extends ActionBarActivity {
 
         // add friend
         else if (v.getId() == R.id.BTaddfriend){
-
+            Intent i = new Intent(Welcome.this, AddFriend.class);
+            startActivity(i);
         }
 
         // logout
@@ -67,7 +68,8 @@ public class Welcome extends ActionBarActivity {
 
         // view deliveries
         else if (v.getId() == R.id.BTviewDeliveries){
-
+            Intent i = new Intent(Welcome.this, ViewDeliveries.class);
+            startActivity(i);
         }
 
         // something went wrong

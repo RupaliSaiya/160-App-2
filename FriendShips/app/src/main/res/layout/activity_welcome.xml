@@ -53,7 +53,8 @@
             android:id="@+id/BTaddfriend"
             android:layout_above="@+id/BTviewDeliveries"
             android:layout_centerHorizontal="true"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="onButtonClick" />
     </LinearLayout>
 
     <LinearLayout
@@ -79,7 +80,8 @@
             android:id="@+id/BTviewDeliveries"
             android:layout_above="@+id/BTcreatedelivery"
             android:layout_centerHorizontal="true"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="onButtonClick" />
     </LinearLayout>
 
 </LinearLayout>
