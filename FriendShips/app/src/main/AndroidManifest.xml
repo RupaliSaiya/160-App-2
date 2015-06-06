@@ -38,6 +38,10 @@
             android:name=".ViewDeliveries"
             android:label="@string/title_activity_view_deliveries" >
         </activity>
+        <activity
+            android:name=".Created"
+            android:label="@string/title_activity_created" >
+        </activity>
     </application>
 
 </manifest>

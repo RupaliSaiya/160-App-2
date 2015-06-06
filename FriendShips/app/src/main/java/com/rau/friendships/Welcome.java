@@ -16,6 +16,7 @@ public class Welcome extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+
         String username = getIntent().getStringExtra("Username");
         TextView tv = (TextView)findViewById(R.id.TVusername);
         tv.setText(username);

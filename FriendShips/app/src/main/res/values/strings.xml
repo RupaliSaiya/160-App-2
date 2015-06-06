@@ -12,4 +12,5 @@
     <string name="title_activity_add_friend">Add Friend</string>
     <string name="title_activity_view_deliveries">View Deliveries</string>
     <string name="log_out">Logout</string>
+    <string name="title_activity_created">Created</string>
 </resources>

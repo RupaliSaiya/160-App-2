@@ -2,32 +2,32 @@
 <items version="2" >
 
     <item
-        jar="D:\App\FriendShips\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="D:\App\FriendShips\app\build\intermediates\pre-dexed\debug\classes-aea3684bc9accd61c477b01c6e99c7d10ff2849d.jar" />
-    </item>
-    <item
-        jar="C:\Users\Uriah\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jar="/Users/uriah/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="D:\App\FriendShips\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-4fe54fc75c60bde06db7885a956eb0c29100bd13.jar" />
+        <dex dex="/Users/uriah/App/FriendShips/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-f621f220e1860018d3cd95e53d4e858b9af992a7.jar" />
     </item>
     <item
-        jar="D:\App\FriendShips\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\libs\internal_impl-21.0.3.jar"
+        jar="/Users/uriah/App/FriendShips/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/jars/libs/internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="D:\App\FriendShips\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-e62e150facc62651f87b3e49e71a3999cce11e30.jar" />
+        <dex dex="/Users/uriah/App/FriendShips/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-5663dc6940f3f7e857acc32b6565cc66d8681df3.jar" />
     </item>
     <item
-        jar="D:\App\FriendShips\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\classes.jar"
+        jar="/Users/uriah/App/FriendShips/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/uriah/App/FriendShips/app/build/intermediates/pre-dexed/debug/classes-daa0005e3826385da3544b39fde6f15c5703366e.jar" />
+    </item>
+    <item
+        jar="/Users/uriah/App/FriendShips/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/jars/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="D:\App\FriendShips\app\build\intermediates\pre-dexed\debug\classes-0668643d8185e33263c98928528566ba7b1b681d.jar" />
+        <dex dex="/Users/uriah/App/FriendShips/app/build/intermediates/pre-dexed/debug/classes-a31d9d6482dbe0df02f1be35b34d61bfec3c72fd.jar" />
     </item>
 
 </items>

@@ -11,8 +11,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -143,7 +143,34 @@ public class CreateDelivery extends ActionBarActivity
     /**********************************
      |   Create the delivery in db    |
      **********************************/
-    public void onClickCreate(View v){
+    public void onCreateDelivery(View v){
+
+        // switch to created page
+        if (v.getId() == R.id.BTcreate){
+            Intent cd = new Intent(CreateDelivery.this, Created.class);
+            startActivity(cd);
+        }
+
+//            // get string vars
+//            EditText title = (EditText)findViewById(R.id.ETdeliveryTitle);
+//            EditText recipient = (EditText)findViewById(R.id.ETrecipient);
+//            EditText location = (EditText)findViewById(R.id.ETlocation);
+//            EditText addinfo = (EditText)findViewById(R.id.ETaddinfo);
+//            TextView date = (TextView)findViewById(R.id.TVdate);
+//            TextView time = (TextView)findViewById(R.id.TVtime);
+//
+//            // convert them to strings
+//            String titleSTR = title.getText().toString();
+//            String recipientSTR = recipient.getText().toString();
+//            String locationSTR = location.getText().toString();
+//            String addinfoSTR = addinfo.getText().toString();
+//
+//            // build date and time strings
+//            String dateSTR = pickerMonth + "/" + pickerDay + "/" + pickerYear;
+
+
+
+
         /**
          * to do: code goes here
          * to insert the delivery
