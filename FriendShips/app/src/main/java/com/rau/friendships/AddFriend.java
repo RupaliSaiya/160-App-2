@@ -51,7 +51,8 @@ public class AddFriend extends ActionBarActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
+
+    } // end onOptonsItemSelected
 
     /**********************************
      |   methods for menu actions     |
@@ -76,4 +77,5 @@ public class AddFriend extends ActionBarActivity {
         startActivity(intent);
         finish();
     }
-}
+
+} // end of AddFriend class

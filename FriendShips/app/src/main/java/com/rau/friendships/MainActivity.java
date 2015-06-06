@@ -13,6 +13,7 @@ import android.widget.Toast;
 public class MainActivity extends ActionBarActivity {
 
     DatabaseHelper helper = new DatabaseHelper(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

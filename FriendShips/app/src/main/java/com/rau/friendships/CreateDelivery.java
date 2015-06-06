@@ -19,8 +19,7 @@ import android.widget.TimePicker;
 // this class needs to be abstract
 public class CreateDelivery extends ActionBarActivity
         implements TimePickerDialog.OnTimeSetListener,
-        DatePickerDialog.OnDateSetListener
-{
+        DatePickerDialog.OnDateSetListener {
 
     // OnTimeSetListener
     private int pickerHour = 0;
@@ -147,31 +146,48 @@ public class CreateDelivery extends ActionBarActivity
 
         // switch to created page
         if (v.getId() == R.id.BTcreate){
+
+            // get string vars
+            EditText title = (EditText)findViewById(R.id.ETdeliveryTitle);
+            EditText recipient = (EditText)findViewById(R.id.ETrecipient);
+            EditText location = (EditText)findViewById(R.id.ETlocation);
+            EditText addinfo = (EditText)findViewById(R.id.ETaddinfo);
+
+            // convert them to strings
+            String titleSTR = title.getText().toString();
+            String recipientSTR = recipient.getText().toString();
+            String locationSTR = location.getText().toString();
+            String addinfoSTR = addinfo.getText().toString();
+
+            // build date the date string
+            String dateSTR = pickerMonth + "/" + pickerDay + "/" + pickerYear;
+
+            // build the time string
+            // normalize the minute in time
+            String timeSTR;
+            String normalizedMinute;
+            if (pickerMin < 10){
+                normalizedMinute = "0" + pickerMin;
+                timeSTR = pickerHour + ":" + normalizedMinute;
+            }
+            else {
+                timeSTR = pickerHour + ":" + pickerMin;
+            }
+
+            // add strings into intent to pass to created activity
             Intent cd = new Intent(CreateDelivery.this, Created.class);
+            cd.putExtra("Title", titleSTR);
+            cd.putExtra("Recipient", recipientSTR);
+            cd.putExtra("Location", locationSTR);
+            cd.putExtra("AddInfo", addinfoSTR);
+            cd.putExtra("Date", dateSTR);
+            cd.putExtra("Time", timeSTR);
             startActivity(cd);
-        }
-
-//            // get string vars
-//            EditText title = (EditText)findViewById(R.id.ETdeliveryTitle);
-//            EditText recipient = (EditText)findViewById(R.id.ETrecipient);
-//            EditText location = (EditText)findViewById(R.id.ETlocation);
-//            EditText addinfo = (EditText)findViewById(R.id.ETaddinfo);
-//            TextView date = (TextView)findViewById(R.id.TVdate);
-//            TextView time = (TextView)findViewById(R.id.TVtime);
-//
-//            // convert them to strings
-//            String titleSTR = title.getText().toString();
-//            String recipientSTR = recipient.getText().toString();
-//            String locationSTR = location.getText().toString();
-//            String addinfoSTR = addinfo.getText().toString();
-//
-//            // build date and time strings
-//            String dateSTR = pickerMonth + "/" + pickerDay + "/" + pickerYear;
 
 
+        } // end if statement
 
-
-        /**
+         /**
          * to do: code goes here
          * to insert the delivery
          * into the database
@@ -190,6 +206,6 @@ public class CreateDelivery extends ActionBarActivity
          Additional Info
 
          */
-    }
+    } // end onCreateDelivery
 
-}
+} // end of CreateDelivery class

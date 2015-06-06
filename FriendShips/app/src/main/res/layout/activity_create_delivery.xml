@@ -92,6 +92,11 @@
 
     </LinearLayout>
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20px"
+        android:layout_weight="0.59" />
+
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

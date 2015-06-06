@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
+    private String currentUser;
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "contacts.db";
     private static final String TABLE_NAME = "contacts";
@@ -28,6 +29,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db){
         db.execSQL(TABLE_CREATE);
         this.db = db;
+
     }
 
     public void insertContact(User c) {
@@ -75,4 +77,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(query);
         this.onCreate(db);
     }
+
+    public String getCurrentUser(){
+        return this.currentUser;
+    }
+
 }
