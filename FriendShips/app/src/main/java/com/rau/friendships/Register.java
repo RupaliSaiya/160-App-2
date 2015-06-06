@@ -31,8 +31,8 @@ public class Register extends Activity {
     }
 
     // if the user submits their registration
-    public void onSignUpClick(View v)
-    {
+    public void onSignUpClick(View v) {
+
         if(v.getId()== R.id.Bsignupbutton)
         {
             EditText name = (EditText)findViewById(R.id.TFname);
@@ -70,12 +70,13 @@ public class Register extends Activity {
                 Intent i = new Intent(Register.this, Welcome.class);
                 i.putExtra("Username", unamestr);
                 startActivity(i);
-            }
-        }
-    }
+
+            } // end of else
+        } // end of if (sign-up button)
+    } // end of onSignUpClick
+
+
     private class FetchSQL extends AsyncTask<Void,Void,String> {
-
-
 
         @Override
         protected String doInBackground(Void... params) {
@@ -106,9 +107,11 @@ public class Register extends Activity {
             } catch (SQLException e) {
                 e.printStackTrace();
                 retval = e.toString();
-            }
-            return retval;
-        }
 
-    }
-}
+            } // end of try-catch
+
+            return retval;
+
+        } // end of doInBackground
+    } // end of FetchSQL
+} // end of Register Class

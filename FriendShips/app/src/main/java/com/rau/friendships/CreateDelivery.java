@@ -1,32 +1,44 @@
 package com.rau.friendships;
 
+import android.os.AsyncTask;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 import android.app.DatePickerDialog;
 import android.app.DialogFragment;
 import android.app.TimePickerDialog;
-import android.content.Context;
-import android.content.Intent;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 
 // this class needs to be abstract
 public class CreateDelivery extends ActionBarActivity
         implements TimePickerDialog.OnTimeSetListener,
         DatePickerDialog.OnDateSetListener {
 
-    // OnTimeSetListener
+    // global variables
     private int pickerHour = 0;
     private int pickerMin = 0;
     private int pickerMonth = 0;
     private int pickerDay= 0;
     private int pickerYear = 0;
+    private String titleSTR = "";
+    private String recipientSTR = "";
+    private String locationSTR = "";
+    private String addinfoSTR = "";
+    private String dateSTR = "";
+    private String timeSTR = "";
 
 
     @Override
@@ -154,17 +166,16 @@ public class CreateDelivery extends ActionBarActivity
             EditText addinfo = (EditText)findViewById(R.id.ETaddinfo);
 
             // convert them to strings
-            String titleSTR = title.getText().toString();
-            String recipientSTR = recipient.getText().toString();
-            String locationSTR = location.getText().toString();
-            String addinfoSTR = addinfo.getText().toString();
+            titleSTR = title.getText().toString();
+            recipientSTR = recipient.getText().toString();
+            locationSTR = location.getText().toString();
+            addinfoSTR = addinfo.getText().toString();
 
             // build date the date string
-            String dateSTR = pickerMonth + "/" + pickerDay + "/" + pickerYear;
+            dateSTR = pickerMonth + "/" + pickerDay + "/" + pickerYear;
 
             // build the time string
             // normalize the minute in time
-            String timeSTR;
             String normalizedMinute;
             if (pickerMin < 10){
                 normalizedMinute = "0" + pickerMin;
@@ -173,6 +184,9 @@ public class CreateDelivery extends ActionBarActivity
             else {
                 timeSTR = pickerHour + ":" + pickerMin;
             }
+
+            // insert new delivery into database
+            new FetchSQL().execute();
 
             // add strings into intent to pass to created activity
             Intent cd = new Intent(CreateDelivery.this, Created.class);
@@ -184,28 +198,49 @@ public class CreateDelivery extends ActionBarActivity
             cd.putExtra("Time", timeSTR);
             startActivity(cd);
 
-
         } // end if statement
-
-         /**
-         * to do: code goes here
-         * to insert the delivery
-         * into the database
-         * use these variables for time/date
-
-         pickerHour
-         pickerMin
-         pickerMonth
-         pickerDay
-         pickerYear
-
-         Need to also capture from the Edit Text fields
-         Delivery title
-         Recipient
-         Location
-         Additional Info
-
-         */
     } // end onCreateDelivery
 
+    private class FetchSQL extends AsyncTask<Void,Void,String> {
+
+        @Override
+        protected String doInBackground(Void... params) {
+            String retval = "";
+            try {
+                Class.forName("org.postgresql.Driver");
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+                retval = e.toString();
+            }
+            String url = "jdbc:postgresql://panguin.chickenkiller.com:34567/postgres?user=postgres&password=helloworld!";
+            Connection conn;
+
+            try {
+                DriverManager.setLoginTimeout(5);
+                conn = DriverManager.getConnection(url);
+                Statement st = conn.createStatement();
+                String sql;
+                sql = "INSERT INTO delivery (title, recipient, location, aditional_info, date, time) " +
+                        "VALUES ('"+ titleSTR + "','"
+                        + recipientSTR + "','"
+                        + locationSTR + "','"
+                        + addinfoSTR + "','"
+                        + dateSTR + "','"
+                        + timeSTR + "');";
+                st.executeQuery(sql);
+                st.close();
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+                retval = e.toString();
+
+            } // end of try-catch
+
+            return retval;
+
+        } // end of doInBackground
+    } // end of FetchSQL
+
 } // end of CreateDelivery class
+
+
