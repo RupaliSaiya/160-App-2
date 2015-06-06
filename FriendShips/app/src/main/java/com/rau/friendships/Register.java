@@ -24,6 +24,13 @@ public class Register extends Activity {
         setContentView(R.layout.activity_register);
     }
 
+    // if the user cancels, go back to main activity
+    public void onCancelClick(View v){
+        Intent i = new Intent(Register.this, MainActivity.class);
+        startActivity(i);
+    }
+
+    // if the user submits their registration
     public void onSignUpClick(View v)
     {
         if(v.getId()== R.id.Bsignupbutton)
@@ -49,7 +56,7 @@ public class Register extends Activity {
             }
             else{
 
-                // insert into database
+                // insert into database (for local login only)
                 User c = new User();
                 c.setName(namestr);
                 c.setEmail(emailstr);
@@ -61,11 +68,15 @@ public class Register extends Activity {
 
                 // direct to welcome screen
                 Intent i = new Intent(Register.this, Welcome.class);
+                i.putExtra("Username", unamestr);
                 startActivity(i);
             }
         }
     }
     private class FetchSQL extends AsyncTask<Void,Void,String> {
+
+
+
         @Override
         protected String doInBackground(Void... params) {
             String retval = "";
@@ -77,19 +88,19 @@ public class Register extends Activity {
             }
             String url = "jdbc:postgresql://panguin.chickenkiller.com:34567/postgres?user=postgres&password=helloworld!";
             Connection conn;
+
+            EditText tname = (EditText)findViewById(R.id.TFname);
+            EditText temail = (EditText)findViewById(R.id.TFemail);
+            EditText tuname = (EditText)findViewById(R.id.TFuname);
+            EditText tpass1 = (EditText)findViewById(R.id.TFpass1);
+
             try {
                 DriverManager.setLoginTimeout(5);
                 conn = DriverManager.getConnection(url);
                 Statement st = conn.createStatement();
                 String sql;
-                sql = "INSERT INTO user_info (uid, name, password, email) VALUES (1234,'test','test','test');";
-                ResultSet rs = st.executeQuery(sql);
-                while(rs.next()) {
-                    retval = rs.getString("name");
-                    //int temp =
-                    //retval = rs.getInt("dataVal");
-                }
-                rs.close();
+                sql = "INSERT INTO user_info (name, password, email) VALUES ('"+ tname.getText() +  "','" + tpass1.getText() + "','" + temail.getText() + "');";
+                st.executeQuery(sql);
                 st.close();
                 conn.close();
             } catch (SQLException e) {

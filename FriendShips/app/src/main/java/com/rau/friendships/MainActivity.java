@@ -19,14 +19,6 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
     public void onButtonClick(View v)
     {
         if(v.getId() == R.id.Blogin){
@@ -44,11 +36,12 @@ public class MainActivity extends ActionBarActivity {
             }
             else {
                 String error = "Username and Password do NOT match.";
-                Toast temp = Toast.makeText(MainActivity.this, error, Toast.LENGTH_SHORT);
-                temp.show();
+                Toast output = Toast.makeText(MainActivity.this, error, Toast.LENGTH_SHORT);
+                output.show();
             }
         } // end if
 
+        // send to Registration screen
         if(v.getId() == R.id.Bsignup) {
             Intent i = new Intent(MainActivity.this, Register.class);
             startActivity(i);
@@ -63,10 +56,6 @@ public class MainActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
 }

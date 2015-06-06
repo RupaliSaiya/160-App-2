@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20px"
+        android:layout_weight="0.36" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ETdeliveryTitle"
+        android:inputType="text"
+        android:hint="Delivery Title" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ETrecipient"
+        android:inputType="textPersonName"
+        android:hint="Recipient" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:id="@+id/ETlocation"
+        android:hint="Location" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ETaddinfo"
+        android:inputType="text"
+        android:hint="Additional Info" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="72dp">
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pick_date"
+            android:onClick="showDatePickerDialog"
+            android:layout_weight="1"
+            android:id="@+id/BTdate" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pick_time"
+            android:onClick="showTimePickerDialog"
+            android:id="@+id/BTtime"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/TVdate"
+            android:singleLine="true"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:inputType="date"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/TVtime"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:inputType="time"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Find me a mutual friend to help me!"
+        android:id="@+id/CBmutualFriend"
+        android:layout_gravity="center_horizontal"
+        android:checked="false" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create!"
+        android:id="@+id/BTcreate"
+        android:layout_gravity="center_horizontal"
+        android:onClick="onClickCreate" />
+
+</LinearLayout>
