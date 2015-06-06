@@ -27,7 +27,7 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Register"
+        android:text="Add Friend"
         android:id="@+id/BTaddfriend"
         android:onClick="onAddFriendClick"
         android:layout_above="@+id/BTcancel_add"
