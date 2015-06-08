@@ -24,7 +24,8 @@ public class AddFriend extends ActionBarActivity {
     }
 
     public void onCancelAddClick(View v) {
-
+        Intent intent = new Intent(this, Welcome.class);
+        startActivity(intent);
     }
     public void onAddFriendClick(View v) {
 
