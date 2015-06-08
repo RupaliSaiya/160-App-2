@@ -154,8 +154,8 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Exit"
-            android:id="@+id/BTexit"
+            android:text="View Deliveries"
+            android:id="@+id/BTviewDeliveries"
             android:layout_weight="1"
             android:onClick="onButtonClick" />
 

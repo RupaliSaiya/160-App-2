@@ -2,13 +2,6 @@
 <items version="2" >
 
     <item
-        jar="/Users/uriah/App/FriendShips/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/jars/libs/internal_impl-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/Users/uriah/App/FriendShips/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-5663dc6940f3f7e857acc32b6565cc66d8681df3.jar" />
-    </item>
-    <item
         jar="/Users/uriah/App/FriendShips/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/jars/classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -21,6 +14,20 @@
         revision="21.1.2"
         sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
         <dex dex="/Users/uriah/App/FriendShips/app/build/intermediates/pre-dexed/debug/classes-a31d9d6482dbe0df02f1be35b34d61bfec3c72fd.jar" />
+    </item>
+    <item
+        jar="/Users/uriah/App/FriendShips/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/jars/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/uriah/App/FriendShips/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-5663dc6940f3f7e857acc32b6565cc66d8681df3.jar" />
+    </item>
+    <item
+        jar="/Users/uriah/App/FriendShips/app/libs/postgresql-9.4-1201.jdbc4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b46544ef0eaf0405504089dcc71f36e3f190ef09">
+        <dex dex="/Users/uriah/App/FriendShips/app/build/intermediates/pre-dexed/debug/postgresql-9.4-1201.jdbc4-bd3377a44ee318494097df778a3e055ccf88da5d.jar" />
     </item>
     <item
         jar="/Users/uriah/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"

@@ -5,14 +5,39 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 
 public class ViewDeliveries extends ActionBarActivity {
+
+    public ArrayList<Item> results = new ArrayList<Item>();
+    public ArrayList deets;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_deliveries);
+
+
+        // create list for deliveries
+        deets = getListData();
+
+        final ListView lv1 = (ListView)findViewById(R.id.custom_list);
+        lv1.setAdapter(new ItemAdapter(this, deets));
+        lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Object o = lv1.getItemAtPosition(position);
+                Item itemData = (Item) o;
+                Toast.makeText(ViewDeliveries.this, "Selected :" + " " + itemData, Toast.LENGTH_LONG).show();
+            }
+        });
+
     }
 
     @Override
@@ -20,6 +45,24 @@ public class ViewDeliveries extends ActionBarActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_view_deliveries, menu);
         return true;
+    } // end onCreate
+
+    private ArrayList getListData(){
+
+        String date = getIntent().getStringExtra("Date");
+        String title = getIntent().getStringExtra("Title");
+        String recipient = getIntent().getStringExtra("Recipient");
+
+        Item itemData = new Item();
+
+        itemData.setDate(date);
+        itemData.setTitle(title);
+        itemData.setRecipient(recipient);
+
+        results.add(itemData);
+
+        return results;
+
     }
 
     @Override

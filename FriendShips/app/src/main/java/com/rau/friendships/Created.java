@@ -14,6 +14,9 @@ import org.w3c.dom.Text;
 public class Created extends ActionBarActivity {
 
     DatabaseHelper helper = new DatabaseHelper(this);
+    private String titleSTR = "";
+    private String recipientSTR = "";
+    private String dateSTR = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,7 @@ public class Created extends ActionBarActivity {
         String date = getIntent().getStringExtra("Date");
         TextView dateTV = (TextView)findViewById(R.id.TVshowDate);
         dateTV.setText(date);
+        dateSTR = date;
 
         // put time into text view
         String time = getIntent().getStringExtra("Time");
@@ -34,11 +38,13 @@ public class Created extends ActionBarActivity {
         String title = getIntent().getStringExtra("Title");
         TextView titleTV = (TextView)findViewById(R.id.TVshowTitle);
         titleTV.setText(title);
+        titleSTR = title;
 
         // put recipient into text view
         String recipient = getIntent().getStringExtra("Recipient");
         TextView recipientTV = (TextView)findViewById(R.id.TVshowRecipient);
         recipientTV.setText(recipient);
+        recipientSTR = recipient;
 
         // put location into text view
         String location = getIntent().getStringExtra("Location");
@@ -120,9 +126,13 @@ public class Created extends ActionBarActivity {
             Intent i = new Intent(Created.this, CreateDelivery.class);
             startActivity(i);
 
-        } else if (v.getId() == R.id.BTexit){
-            Intent i = new Intent(Created.this, Welcome.class);
-            startActivity(i);
+        } else if (v.getId() == R.id.BTviewDeliveries){
+            // add strings into intent and pass to view deliveries
+            Intent vd = new Intent(Created.this, ViewDeliveries.class);
+            vd.putExtra("Title", titleSTR);
+            vd.putExtra("Recipient", recipientSTR);
+            vd.putExtra("Date", dateSTR);
+            startActivity(vd);
         }
     }
 
